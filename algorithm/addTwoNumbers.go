@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+//import "fmt"
 
 /*
  *  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
@@ -38,6 +38,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return node.Next
 }
 
+/*
 func main() {
 	var node1 ListNode
 	var node2 ListNode
@@ -66,3 +67,4 @@ func main() {
 		point = point.Next
 	}
 }
+*/
