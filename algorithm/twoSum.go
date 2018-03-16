@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+//import "fmt"
 
 /*
  * 查找数组中连续2个数字之和等于target值得索引
@@ -22,8 +22,10 @@ end:
 	return arr
 }
 
-func main() {
-	arr := []int{6, 3, 5, 7, 4, 4}
-	arrRst := twoSum(arr, 8)
-	fmt.Println(arrRst)
-}
+//func main() {
+//	arr := []int{6, 3, 5, 7, 4, 4}
+//	arrRst := twoSum(arr, 8)
+//	for i := 0; i < len(arrRst); i++ {
+//		fmt.Println(arrRst[i])
+//	}
+//}
