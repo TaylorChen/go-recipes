@@ -17,10 +17,3 @@ func TestMax(t *testing.T) {
 		t.Errorf("Expected the value of %d but actual got %d!", 3, actual)
 	}
 }
-
-func TestJudgeUnique(t *testing.T) {
-	actual := judgeUnique("abc", 0, 2)
-	if !actual {
-		t.Errorf("Expected the value of %t but actual got %t!", true, actual)
-	}
-}
