@@ -1,8 +1,20 @@
 package main
 
+/*
 import (
 	"fmt"
 )
+*/
+
+/*
+ *
+ *
+ * Given "abcabcbb", the answer is "abc", which the length is 3.
+ * Given "bbbbb", the answer is "b", with the length of 1.
+ * Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ *
+ *
+ */
 
 func lengthOfLongestSubstring(s string) int {
 	slength := len(s)
@@ -23,6 +35,7 @@ func max(x int, y int) int {
 	}
 	return y
 }
+
 func judgeUnique(s string, start int, end int) bool {
 	chars := make(map[string]int)
 	for i := start; i < end; i++ {
@@ -36,8 +49,10 @@ func judgeUnique(s string, start int, end int) bool {
 	return true
 }
 
+/*
 func main() {
 	ans := lengthOfLongestSubstring("bbbbb")
 	fmt.Println(ans)
 	fmt.Println("vim-go")
 }
+*/
