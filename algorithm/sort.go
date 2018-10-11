@@ -104,9 +104,6 @@ func main() {
 	//fmt.Println(insertSort([]int{5, 4, 3}, 3))
 	//fmt.Println(selectSort([]int{5, -1, 10, 1}, 4))
 	arrs := []int{12, -1000, 345, 5, -1, 10, 1}
-
 	quickSort(arrs, 0, 3)
-
 	fmt.Println(arrs)
-
 }
