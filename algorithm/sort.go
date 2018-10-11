@@ -20,9 +20,9 @@ func bubbleSort(arrs []int, len int) []int {
 				arrs[j+1] = tmp
 				tag = true
 			}
-			if !tag {
-				break
-			}
+		}
+		if !tag {
+			break
 		}
 	}
 	return arrs
@@ -100,10 +100,10 @@ func quickSort(arrs []int, low int, high int) {
 }
 
 func main() {
-	//fmt.Println(bubbleSort([]int{5, 4, 3, 2, 1, -1, -2}, 7))
+	fmt.Println(bubbleSort([]int{5, 10, 3, 2, 1, -1, -2}, 7))
 	//fmt.Println(insertSort([]int{5, 4, 3}, 3))
 	//fmt.Println(selectSort([]int{5, -1, 10, 1}, 4))
-	arrs := []int{12, -1000, 345, 5, -1, 10, 1}
-	quickSort(arrs, 0, 3)
-	fmt.Println(arrs)
+	//arrs := []int{12, -1000, 345, 5, -1, 10, 1}
+	//quickSort(arrs, 0, 3)
+	//fmt.Println(arrs)
 }
