@@ -75,8 +75,38 @@ func selectSort(arrs []int, len int) []int {
 	return arrs
 }
 
+func quickSort(arrs []int, low int, high int) {
+	if low >= high {
+		return
+	}
+	pivot := arrs[low]
+	i := low
+	j := high
+	for i < j {
+		for i < j && arrs[j] >= pivot {
+			j--
+		}
+		arrs[i] = arrs[j]
+
+		for i < j && arrs[i] <= pivot {
+			i++
+		}
+		arrs[j] = arrs[i]
+
+	}
+	arrs[i] = pivot
+	quickSort(arrs, low, i-1)
+	quickSort(arrs, i+1, high)
+}
+
 func main() {
 	//fmt.Println(bubbleSort([]int{5, 4, 3, 2, 1, -1, -2}, 7))
 	//fmt.Println(insertSort([]int{5, 4, 3}, 3))
-	fmt.Println(selectSort([]int{5, -1, 10, 1}, 4))
+	//fmt.Println(selectSort([]int{5, -1, 10, 1}, 4))
+	arrs := []int{12, -1000, 345, 5, -1, 10, 1}
+
+	quickSort(arrs, 0, 3)
+
+	fmt.Println(arrs)
+
 }
