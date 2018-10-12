@@ -4,13 +4,7 @@ import (
 	"fmt"
 )
 
-func bubbleSort(arrs []int, len int) []int {
-
-	if len <= 0 {
-		fmt.Println("bad length")
-		return arrs
-	}
-
+func bubbleSort(arrs []int, len int) {
 	for i := 0; i < len; i++ {
 		tag := false
 		for j := 0; j < len-1-i; j++ {
@@ -25,16 +19,9 @@ func bubbleSort(arrs []int, len int) []int {
 			break
 		}
 	}
-	return arrs
 }
 
-func insertSort(arrs []int, len int) []int {
-
-	if len <= 0 {
-		fmt.Println("bad length")
-		return arrs
-	}
-
+func insertSort(arrs []int, len int) {
 	for i := 1; i < len; i++ {
 		val := arrs[i]
 		j := i - 1
@@ -47,17 +34,9 @@ func insertSort(arrs []int, len int) []int {
 		}
 		arrs[j+1] = val
 	}
-
-	return arrs
 }
 
-func selectSort(arrs []int, len int) []int {
-
-	if len <= 0 {
-		fmt.Println("bad length")
-		return arrs
-	}
-
+func selectSort(arrs []int, len int) {
 	for i := 0; i < len; i++ {
 		min := i
 		for j := i; j < len; j++ {
@@ -72,7 +51,6 @@ func selectSort(arrs []int, len int) []int {
 		}
 
 	}
-	return arrs
 }
 
 func quickSort(arrs []int, low int, high int) {
@@ -100,10 +78,10 @@ func quickSort(arrs []int, low int, high int) {
 }
 
 func main() {
-	fmt.Println(bubbleSort([]int{5, 10, 3, 2, 1, -1, -2}, 7))
-	//fmt.Println(insertSort([]int{5, 4, 3}, 3))
-	//fmt.Println(selectSort([]int{5, -1, 10, 1}, 4))
-	//arrs := []int{12, -1000, 345, 5, -1, 10, 1}
-	//quickSort(arrs, 0, 3)
-	//fmt.Println(arrs)
+	arrs := []int{5, 10, 3, 99, 1, -1, -2}
+	//bubbleSort(arrs, 7)
+	//insertSort(arrs, 7)
+	//selectSort(arrs, 7)
+	quickSort(arrs, 0, 6)
+	fmt.Println(arrs)
 }
