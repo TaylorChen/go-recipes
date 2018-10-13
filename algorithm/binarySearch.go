@@ -8,7 +8,7 @@ func bsearch(arrs []int, len int, val int) int {
 	low := 0
 	high := len - 1
 	for low <= high {
-		mid := low + (high-low)>>1
+		mid := low + ((high - low) >> 1)
 		if arrs[mid] == val {
 			return mid
 		} else if arrs[mid] < val {
@@ -26,7 +26,7 @@ func bsearchRecurise(arrs []int, low int, high int, val int) int {
 		return -1
 	}
 
-	mid := low + (high-low)>>1
+	mid := low + ((high - low) >> 1)
 	if arrs[mid] == val {
 		return mid
 	} else if arrs[mid] < val {
