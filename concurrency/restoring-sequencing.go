@@ -18,7 +18,7 @@ func boring(msg string) <-chan Message {
 		for i := 0; ; i++ {
 			c <- Message{fmt.Sprintf("%s %d", msg, i), waitForIt}
 			time.Sleep(time.Duration(rand.Intn(2e3)) * time.Millisecond)
-			waitForIt <- true
+			<-waitForIt
 		}
 	}()
 	return c
@@ -48,8 +48,8 @@ func main() {
 		msg2 := <-c
 		fmt.Println(msg2.str)
 
-		<-msg1.wait //reset channel , stop blocking
-		<-msg2.wait
+		msg1.wait <- true //reset channel , stop blocking
+		msg2.wait <- true
 
 	}
 	fmt.Println("You're boring; I'm leaving.")
