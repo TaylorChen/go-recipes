@@ -45,6 +45,31 @@ func (n *BinaryNode) insert(data int64) {
 	}
 }
 
+func (n *BinaryTree) minNode() (node *BinaryNode) {
+	current := n.root
+	for current.left != nil {
+		current = current.left
+	}
+	return current
+}
+
+func (n *BinaryTree) search(data int64) (node *BinaryNode) {
+	current := n.root
+	for current.data != data {
+		if current != nil {
+			if current.data > data {
+				current = current.left
+			} else {
+				current = current.right
+			}
+			if current == nil {
+				return nil
+			}
+		}
+	}
+	return current
+}
+
 func preOrder(w io.Writer, node *BinaryNode, ns int, ch rune) {
 	if node == nil {
 		return
@@ -73,4 +98,14 @@ func main() {
 		insert(5).
 		insert(-10)
 	preOrder(os.Stdout, tree.root, 0, 'M')
+
+	min := tree.minNode()
+	fmt.Println(min.data)
+
+	sNode := tree.search(1000)
+	if sNode != nil {
+		fmt.Println(sNode.data)
+	} else {
+		fmt.Println(sNode)
+	}
 }

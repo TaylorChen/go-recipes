@@ -36,6 +36,15 @@ func InOrder(node *Tree) {
 
 }
 
+func minValueNode(node *Tree) (tree *Tree) {
+	current := node
+
+	for current.Left != nil {
+		current = current.Left
+	}
+	return current
+}
+
 func main() {
 	root := Insert(nil, 50)
 	Insert(root, 30)
@@ -45,4 +54,8 @@ func main() {
 	Insert(root, 60)
 	Insert(root, 80)
 	InOrder(root)
+
+	minNode := minValueNode(root)
+	fmt.Println("==============")
+	fmt.Println(minNode.Data)
 }
