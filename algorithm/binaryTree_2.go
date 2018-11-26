@@ -45,8 +45,7 @@ func (n *BinaryNode) insert(data int64) {
 	}
 }
 
-func (n *BinaryTree) minNode() (node *BinaryNode) {
-	current := n.root
+func minNode(current *BinaryNode) (node *BinaryNode) {
 	for current.left != nil {
 		current = current.left
 	}
@@ -68,6 +67,33 @@ func (n *BinaryTree) search(data int64) (node *BinaryNode) {
 		}
 	}
 	return current
+}
+
+func deleteNode(root *BinaryNode, data int64) (node *BinaryNode) {
+	if root == nil {
+		return root
+	}
+
+	if data < root.data {
+		root.left = deleteNode(root.left, data)
+	} else if data > root.data {
+		root.right = deleteNode(root.right, data)
+	} else {
+		if root.left == nil {
+			tmp := root.right
+			root = nil
+			return tmp
+		} else if root.right == nil {
+			tmp := root.left
+			root = nil
+			return tmp
+		}
+
+		tmp := minNode(root.right)
+		root.data = tmp.data
+		root.right = deleteNode(root.right, tmp.data)
+	}
+	return root
 }
 
 func preOrder(w io.Writer, node *BinaryNode, ns int, ch rune) {
@@ -99,13 +125,15 @@ func main() {
 		insert(-10)
 	preOrder(os.Stdout, tree.root, 0, 'M')
 
-	min := tree.minNode()
+	min := minNode(tree.root)
 	fmt.Println(min.data)
 
-	sNode := tree.search(1000)
-	if sNode != nil {
-		fmt.Println(sNode.data)
+	searchNode := tree.search(1000)
+	if searchNode != nil {
+		fmt.Println(searchNode.data)
 	} else {
-		fmt.Println(sNode)
+		fmt.Println(searchNode)
 	}
+	root := deleteNode(tree.root, 15)
+	preOrder(os.Stdout, root, 0, 'M')
 }
