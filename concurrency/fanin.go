@@ -34,7 +34,7 @@ func fanIn(input1, input2 <-chan string) <-chan string {
 
 func main() {
 	c := fanIn(boring("a"), boring("b"))
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 20; i++ {
 		fmt.Println(<-c)
 	}
 	fmt.Println("You're boring; I'm leaving.")

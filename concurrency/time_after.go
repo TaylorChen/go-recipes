@@ -18,18 +18,29 @@ func boring(msg string) <-chan string {
 }
 
 func main() {
+
 	/*
-		c := boring("boring !")
-		for i := 0; i < 10; i++ {
-			fmt.Printf("You say:%q\n", <-c)
+		c := boring("Joe")
+		for {
+			select {
+			case s := <-c:
+				fmt.Println(s)
+			case <-time.After(100 * time.Millisecond):
+				fmt.Println("You are to slow")
+			}
 		}
 	*/
 
-	a := boring("a")
-	b := boring("b")
-	for i := 0; i < 20; i++ {
-		fmt.Println(<-a)
-		fmt.Println(<-b)
+	c := boring("Joe")
+	timeout := time.After(100 * time.Millisecond)
+	for {
+		select {
+		case s := <-c:
+			fmt.Println(s)
+		case <-timeout:
+			fmt.Println("You are to slow")
+		}
 	}
+
 	fmt.Println("You're boring; I'm leaving.")
 }
