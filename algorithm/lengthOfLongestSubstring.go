@@ -1,10 +1,8 @@
 package main
 
-/*
 import (
 	"fmt"
 )
-*/
 
 /*
  *
@@ -32,11 +30,35 @@ func lengthOfLongestSubstring(s string) int {
 	return ans
 }
 
+func lengthOfLongestSubstring2(s string) int {
+	slength := len(s)
+	res := 0
+	l := 0
+	r := -1
+	chars := make(map[string]int)
+	for i := 0; i < slength; i++ {
+		if (r+-1) < slength && chars[string(s[r+1])] == 0 {
+			r++
+			chars[string(s[r])]++
+		} else {
+			chars[string(s[l])]--
+			l++
+		}
+		res = max(res, r-l+1)
+	}
+	return res
+}
+
 func max(x int, y int) int {
 	if x > y {
 		return x
 	}
 	return y
+}
+
+func main() {
+	res := lengthOfLongestSubstring2("abcabcbb")
+	fmt.Println(res)
 }
 
 /*
