@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+// import "fmt"
 
 func maxProfit(arrs []int) int {
 	if len(arrs) < 2 {
@@ -30,10 +28,4 @@ func maxProfit(arrs []int) int {
 	return maxDiff
 }
 
-func main() {
-
-	//arrs := []int{7, 1, 5, 4, 6, 4}
-	arrs := []int{7, 6, 4, 3, 1}
-	fmt.Println(maxProfit(arrs))
-
-}
+// func main() {}

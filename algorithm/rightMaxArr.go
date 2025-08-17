@@ -1,7 +1,6 @@
-package main
+package algorithm
 
 import (
-	"fmt"
 	"go-recipes/algorithm/collections"
 )
 
@@ -20,7 +19,4 @@ func rightMaxArr(arr []int, len int) []int {
 	return res
 }
 
-func main() {
-	st := []int{1, 2, 3, 8, 7, 6}
-	fmt.Println(rightMaxArr(st, len(st)))
-}
+// func main() {}

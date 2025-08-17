@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+// import "fmt"
 
 /*
  *
@@ -56,10 +54,7 @@ func max(x int, y int) int {
 	return y
 }
 
-func main() {
-	res := lengthOfLongestSubstring2("abcabcbb")
-	fmt.Println(res)
-}
+// func main() {}
 
 /*
 func main() {

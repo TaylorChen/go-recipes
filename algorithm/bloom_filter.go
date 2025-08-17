@@ -1,10 +1,10 @@
-package main
+package algorithm
 
 import (
-	"fmt"
-	"github.com/spaolacci/murmur3"
 	"hash"
 	"hash/fnv"
+
+	"github.com/spaolacci/murmur3"
 )
 
 type BloomFilter struct {
@@ -71,13 +71,4 @@ func (bf *BloomFilter) hashValues(item []byte) []uint64 {
 	return result
 }
 
-func main() {
-	bf := New(1024)
-	bf.Add([]byte("hello"))
-	bf.Add([]byte("world"))
-	bf.Add([]byte("abc"))
-	bf.Add([]byte("tom"))
-	bf.Add([]byte("dayday"))
-
-	fmt.Println(bf.Contains([]byte("tom")))
-}
+// func main() {}

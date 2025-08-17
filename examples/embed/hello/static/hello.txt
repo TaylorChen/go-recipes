@@ -1,0 +1,3 @@
+Hello from go:embed
+
+

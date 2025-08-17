@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+// import "fmt"
 
 func bubbleSort(arrs []int, len int) {
 	for i := 0; i < len; i++ {
@@ -77,11 +75,4 @@ func quickSort(arrs []int, low int, high int) {
 	quickSort(arrs, i+1, high)
 }
 
-func main() {
-	arrs := []int{5, 10, 3, 99, 1, -1, -2}
-	//bubbleSort(arrs, 7)
-	//insertSort(arrs, 7)
-	//selectSort(arrs, 7)
-	quickSort(arrs, 0, 6)
-	fmt.Println(arrs)
-}
+// func main() {}

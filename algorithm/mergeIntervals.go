@@ -1,4 +1,4 @@
-package main
+package algorithm
 
 import (
 	"fmt"
@@ -25,7 +25,7 @@ func (in IntervalsStart) Swap(i, j int) {
 	in[i], in[j] = in[j], in[i]
 }
 
-//对 [l1,r1], [l2,r2]，如果 r1 > l2，则 r1 = max(r1, r2)
+// 对 [l1,r1], [l2,r2]，如果 r1 > l2，则 r1 = max(r1, r2)
 func merge(intervals []Interval) []Interval {
 	if len(intervals) == 0 {
 		return intervals
@@ -50,12 +50,4 @@ func merge(intervals []Interval) []Interval {
 	return r
 }
 
-func main() {
-	intervals := []Interval{
-		{Start: 1, End: 3},
-		{Start: 2, End: 6},
-		{Start: 15, End: 18},
-		{Start: 8, End: 10},
-	}
-	fmt.Println(merge(intervals))
-}
+// func main() {}

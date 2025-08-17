@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# Editors/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.history/
+
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Binaries / build dirs
+bin/
+build/
+dist/
+
+# Logs
+*.log
+
+# Coverage
+coverage.*
+*.cover
+*.cov
+*.lcov
+coverprofile
+
+# Env files (keep example)
+.env
+.env.*
+!.env.example
+
+# Caches / temp
+tmp/
+.cache/
+.local/
+
+# Go workspace files (optional)
+go.work
+go.work.sum
+
+# Vendored dependencies
+vendor/
+

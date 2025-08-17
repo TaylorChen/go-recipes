@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+// import "fmt"
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	size, i, j := len(nums1)+len(nums2), 0, 0
@@ -32,9 +30,4 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return ret
 }
 
-func main() {
-	nums1 := []int{1, 2}
-	nums2 := []int{3, 4}
-	median := findMedianSortedArrays(nums1, nums2)
-	fmt.Println(median)
-}
+// func main() {}

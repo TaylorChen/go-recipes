@@ -1,9 +1,8 @@
-package main
+package algorithm
 
 import (
 	"fmt"
 	"io"
-	"os"
 )
 
 type BinaryNode struct {
@@ -109,31 +108,4 @@ func preOrder(w io.Writer, node *BinaryNode, ns int, ch rune) {
 	preOrder(w, node.right, ns+2, 'R')
 }
 
-func main() {
-	tree := &BinaryTree{}
-	tree.insert(100).
-		insert(-20).
-		insert(-50).
-		insert(-15).
-		insert(-60).
-		insert(50).
-		insert(60).
-		insert(55).
-		insert(85).
-		insert(15).
-		insert(5).
-		insert(-10)
-	preOrder(os.Stdout, tree.root, 0, 'M')
-
-	min := minNode(tree.root)
-	fmt.Println(min.data)
-
-	searchNode := tree.search(1000)
-	if searchNode != nil {
-		fmt.Println(searchNode.data)
-	} else {
-		fmt.Println(searchNode)
-	}
-	root := deleteNode(tree.root, 15)
-	preOrder(os.Stdout, root, 0, 'M')
-}
+// func main() {}

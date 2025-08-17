@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package algorithm
 
 func bsearch(arrs []int, len int, val int) int {
 	low := 0
@@ -94,13 +90,4 @@ func bsearchFirstGtePos(arrs []int, len int, val int) int {
 	return -1
 }
 
-func main() {
-	arrs := []int{1, 8, 10, 12, 34, 56, 90}
-	fmt.Println(bsearch(arrs, 7, 90))
-	fmt.Println(bsearchRecurise(arrs, 0, 6, 90))
-
-	arrsFirst := []int{1, 2, 6, 9, 9, 9, 12}
-	fmt.Println(bsearchFirstPos(arrsFirst, 7, 9))
-	fmt.Println(bsearchLastPos(arrsFirst, 7, 9))
-	fmt.Println(bsearchFirstGtePos(arrsFirst, 7, 2))
-}
+// func main() {}

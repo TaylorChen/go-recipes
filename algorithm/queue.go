@@ -1,34 +1,33 @@
-package main
+package algorithm
 
 import (
-	"fmt"
 	"sync"
 )
 
-type Item struct {
+type QueueItem struct {
 	data string
 }
 
 type ItemQueue struct {
-	items []Item
+	items []QueueItem
 	lock  sync.RWMutex
 }
 
 // create stack
 func (q *ItemQueue) New() *ItemQueue {
-	q.items = []Item{}
+	q.items = []QueueItem{}
 	return q
 }
 
-//En queue
-func (q *ItemQueue) Enqueue(t Item) {
+// En queue
+func (q *ItemQueue) Enqueue(t QueueItem) {
 	q.lock.Lock()
 	q.items = append(q.items, t)
 	q.lock.Unlock()
 }
 
-//De queue
-func (q *ItemQueue) Dequeue() *Item {
+// De queue
+func (q *ItemQueue) Dequeue() *QueueItem {
 	q.lock.Lock()
 	item := q.items[0]
 	q.items = q.items[1:len(q.items)]
@@ -36,8 +35,8 @@ func (q *ItemQueue) Dequeue() *Item {
 	return &item
 }
 
-//front item
-func (q *ItemQueue) Front() *Item {
+// front item
+func (q *ItemQueue) Front() *QueueItem {
 	q.lock.Lock()
 	item := q.items[0]
 	q.lock.Unlock()
@@ -48,17 +47,9 @@ func (q *ItemQueue) IsEmpty() bool {
 	return len(q.items) == 0
 }
 
-//size
+// size
 func (q *ItemQueue) Size() int {
 	return len(q.items)
 }
 
-func main() {
-	queue := ItemQueue{}
-	queue.New()
-	queue.Enqueue(Item{data: "a"})
-	queue.Enqueue(Item{data: "b"})
-	tmpItem := queue.Dequeue()
-	fmt.Println(tmpItem.data)
-	fmt.Println(queue.items)
-}
+// func main() {}

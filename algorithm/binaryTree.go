@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Tree struct {
 	Left  *Tree
@@ -45,17 +43,4 @@ func minValueNode(node *Tree) (tree *Tree) {
 	return current
 }
 
-func main() {
-	root := Insert(nil, 50)
-	Insert(root, 30)
-	Insert(root, 20)
-	Insert(root, 40)
-	Insert(root, 70)
-	Insert(root, 60)
-	Insert(root, 80)
-	InOrder(root)
-
-	minNode := minValueNode(root)
-	fmt.Println("==============")
-	fmt.Println(minNode.Data)
-}
+// func main() {}

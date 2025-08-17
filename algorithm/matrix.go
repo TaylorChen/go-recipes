@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+// import "fmt"
 
 func Find(arrs [][]int, rows, columns, num int) bool {
 	isFind := false
@@ -24,11 +22,4 @@ func Find(arrs [][]int, rows, columns, num int) bool {
 	return isFind
 }
 
-func main() {
-	martix := [][]int{
-		{1, 2, 3},
-		{2, 4, 6},
-		{3, 8, 9},
-	}
-	fmt.Println(Find(martix, 3, 3, 8))
-}
+// func main() {}

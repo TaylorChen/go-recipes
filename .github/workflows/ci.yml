@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+          check-latest: true
+      - name: Go env
+        run: go version && go env
+      - name: Tidy
+        run: go mod tidy
+      - name: Vet
+        run: go vet ./algorithm ./examples/...
+      - name: Test
+        run: go test ./algorithm -run . -bench . -benchmem
+      - name: Build examples
+        run: go build ./examples/...
+
+

@@ -1,8 +1,6 @@
-package main
+package algorithm
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func findThePivotElement(arr []int, len int) {
 	rightMin := make([]int, len)
@@ -26,7 +24,4 @@ func findThePivotElement(arr []int, len int) {
 
 }
 
-func main() {
-	st := []int{1, 8, 6, 9, 10, 15, 12, 20}
-	findThePivotElement(st, len(st))
-}
+// func main() {}

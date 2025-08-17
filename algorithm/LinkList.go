@@ -1,4 +1,4 @@
-package main
+package algorithm
 
 import (
 	"fmt"
@@ -121,32 +121,4 @@ func (head *linkNode) GetLength() int {
 	return length
 }
 
-func main() {
-
-	intitNode := NewLinkNode()
-
-	for i := 0; i < 50; i++ {
-		intitNode.Add(2*i + 1)
-	}
-
-	fmt.Println(intitNode.GetLength(), intitNode.GetAll())
-
-	intitNode.Add("new add data")
-
-	fmt.Println(intitNode.GetLength(), intitNode.GetAll())
-
-	intitNode.Insert(40, "new insert data")
-
-	fmt.Println(intitNode.GetLength(), intitNode.GetAll())
-
-	d := intitNode.Delete(4)
-
-	if _, ok := d.(error); ok {
-		fmt.Println("delete fail", d)
-
-	} else {
-		fmt.Println("delete success")
-	}
-
-	fmt.Println(intitNode.GetLength(), intitNode.GetAll())
-}
+// func main() {}
